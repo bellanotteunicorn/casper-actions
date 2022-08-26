@@ -63,6 +63,12 @@ which templates loop over to generate a list of posts. --}}
             {{/if}}
         </a>
 
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+            {{#if reading_time}}
+                <span class="post-card-meta-length">{{reading_time}}</span>
+            {{/if}}
+         
             <ul class="author-list">
                 {{#foreach authors}}
                 <li class="author-list-item">
@@ -75,13 +81,8 @@ which templates loop over to generate a list of posts. --}}
                     {{/if}}
                 </li>
                 {{/foreach}}
-            </ul>         
+            </ul>          
 
-        <footer class="post-card-meta">
-            <time class="post-card-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-            {{#if reading_time}}
-                <span class="post-card-meta-length">{{reading_time}}</span>
-            {{/if}}
             {{#if @site.comments_enabled}}
                 {{comment_count}}
             {{/if}}
