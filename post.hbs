@@ -59,6 +59,8 @@ into the {body} tag of the default.hbs template --}}
         </section>
         </div>
 
+        {{> "components/social-share" class="order-first mb-6 md:mb-0 md:order-none" Tracking_name="Header"}}
+
         {{#match @custom.post_image_style "!=" "Hidden"}}
         {{#if feature_image}}
             <figure class="article-image">
@@ -80,7 +82,6 @@ into the {body} tag of the default.hbs template --}}
         {{/if}}
         {{/match}}
 
-     {{> "components/social-share" class="order-first mb-6 md:mb-0 md:order-none" Tracking_name="Header"}}
     </header>
 
     <section class="gh-content gh-canvas">
